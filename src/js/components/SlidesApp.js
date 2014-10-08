@@ -1,11 +1,12 @@
 /** @jsx React.DOM */
-
 "use strict";
 
 var React = require("react");
 // var SlidesMenuBar = require("./SlidesMenuBar");
 var SlidesList = require("./SlidesList");
 var initial = require("../data/initial");
+var uuid4 = require("../utils").uuid4;
+
 
 var SlidesApp = React.createClass({
   getInitialState: function () {
@@ -23,12 +24,29 @@ var SlidesApp = React.createClass({
     this.save(initial);
   },
 
+  create: function() {
+    var slides = this.state.slides.concat([{
+      id: uuid4(),
+      title: "New item"
+    }]);
+    this.save(slides);
+  },
+
+  remove: function(event) {
+    var currentId = event.currentTarget.dataset.id;
+    this.save(this.state.slides.filter(function(slideshow) {
+      return slideshow.id !== currentId;
+    }));
+  },
+
   render: function() {
     return (
       <div>
         <h1>Your slides</h1>
         <SlidesList slides={this.state.slides}
-                    loadSamples={this.loadSamples} />
+                    loadSamples={this.loadSamples}
+                    create={this.create}
+                    remove={this.remove} />
       </div>
     );
   }
