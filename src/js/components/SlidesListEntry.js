@@ -6,7 +6,7 @@ var React = require("react");
 
 var SlidesListEntry = React.createClass({
   handleClickDelete: function() {
-    if (!confirm("Are you sure?"))
+    if (!confirm("Are you sure to want to remove `" + this.props.title + "`'s slideshow?"))
       return;
     this.props.remove(this.props.id);
   },
