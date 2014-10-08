@@ -13,13 +13,11 @@ var SlidesListEntry = React.createClass({
 
   render: function() {
     return (
-      <tr>
-        <th>{this.props.title}</th>
-        <td>
-          <button>Edit</button>
-          <button onClick={this.handleClickDelete}>Remove</button>
-        </td>
-      </tr>
+      <div>
+        <span>{this.props.title}</span>
+        <button>Edit</button>
+        <button onClick={this.handleClickDelete}>Remove</button>
+      </div>
     );
   }
 });
