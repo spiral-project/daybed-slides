@@ -32,10 +32,9 @@ var SlidesApp = React.createClass({
     this.save(slides);
   },
 
-  remove: function(event) {
-    var currentId = event.currentTarget.dataset.id;
+  remove: function(id) {
     this.save(this.state.slides.filter(function(slideshow) {
-      return slideshow.id !== currentId;
+      return slideshow.id !== id;
     }));
   },
 
