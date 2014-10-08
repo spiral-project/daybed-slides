@@ -4,9 +4,8 @@
 
 var React = require("react");
 var SlidesApp = require("./components/SlidesApp");
-// var SlidesStore = require("./store");
-// var store = new SlidesStore();
+var LocalStore = require("./store");
+var store = new LocalStore();
 
-// store={store}
-React.renderComponent(<SlidesApp />,
+React.renderComponent(<SlidesApp store={store} />,
                       document.getElementById('app'));

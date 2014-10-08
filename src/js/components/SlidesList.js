@@ -4,18 +4,12 @@
 
 var React = require("react");
 
-var SlidesList = React.createClass({
-  getInitialState: function () {
-    return {
-      slides: [{title: "Markdown pour les nuls", id: 1},
-               {title: "ReST pour les nuls", id: 2}]
-    };
-  },
 
+var SlidesList = React.createClass({
   render: function() {
     return (<div className="slidesList">
       <table>
-        {this.state.slides.map(function(slide) {
+        {this.props.slides.map(function(slide) {
           return (
             <tr>
               <th>{slide.title}</th>
@@ -24,14 +18,9 @@ var SlidesList = React.createClass({
            );
          })}
       </table>
-      <button onClick={this.addSlideshow}>Add a new Slideshow</button>
+      <button onClick={this.props.addSlideshow}>Add a new Slideshow</button>
+      <button onClick={this.props.loadSamples}>Load Sample Data</button>
     </div>);
-  },
-
-  addSlideshow: function() {
-    this.setState({
-      slides: this.state.slides.concat([{title: "New", id: 3}])
-    });
   }
 });
 
