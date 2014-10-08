@@ -1,0 +1,45 @@
+{
+  "name": "daybed-slides",
+  "version": "0.0.1",
+  "description": "Your reveal.js slides stored in daybed.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gulp deploy",
+    "dist": "gulp dist",
+    "lint": "jsxhint -c .jshintrc src/js",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spiral-project/daybed-slides"
+  },
+  "keywords": [
+    "react",
+    "daybed",
+    "reveal.js",
+    "slides"
+  ],
+  "author": "Rémy Hubscher <natim@mozilla.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spiral-project/daybed-slides/issues"
+  },
+  "homepage": "https://github.com/spiral-project/daybed-slides",
+  "dependencies": {
+    "gulp": "^3.8.*",
+    "gulp-connect": "^2.0.*",
+    "gulp-gh-pages": "^0.3.*",
+    "gulp-uglify": "^0.3.*",
+    "marked": "^0.3.*",
+    "react": "^0.10.*",
+    "react-bootstrap": "^0.10.*",
+    "reactify": "^0.13.*",
+    "browserify": "^4.1.*",
+    "vinyl-source-stream": "^0.1.*"
+  },
+  "devDependencies": {
+    "jest-cli": "latest",
+    "jsxhint": "latest",
+    "react-tools": "latest"
+  }
+}

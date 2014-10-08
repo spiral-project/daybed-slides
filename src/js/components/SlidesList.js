@@ -1,4 +1,9 @@
 /** @jsx React.DOM */
+
+"use strict";
+
+var React = require("react");
+
 var SlidesList = React.createClass({
   getInitialState: function () {
     return {
@@ -30,11 +35,4 @@ var SlidesList = React.createClass({
   }
 });
 
-
-React.renderComponent(
-  <div>
-    <h1>Your slides</h1>
-    <SlidesList />
-  </div>,
-  document.getElementById('work')
-);
+module.exports = SlidesList;
